@@ -1,8 +1,8 @@
 -- create_tables.sql (MySQL)
 -- Jalankan di MySQL 5.7+ / 8.0
-CREATE DATABASE IF NOT EXISTS `ayam_monitoring`
+CREATE DATABASE IF NOT EXISTS `if0_40116604_ayam_rempah`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `ayam_monitoring`;
+USE `if0_40116604_ayam_rempah`;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` INT NOT NULL AUTO_INCREMENT,

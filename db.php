@@ -1,10 +1,10 @@
 <?php
 // db.php - MySQL via PDO
-$DB_HOST = getenv('MYSQL_HOST') ?: 'localhost';
+$DB_HOST = getenv('MYSQL_HOST') ?: 'sql103.infinityfree.com';
 $DB_PORT = getenv('MYSQL_PORT') ?: '3306';
-$DB_NAME = getenv('MYSQL_DB')   ?: 'ayam_monitoring';
-$DB_USER = getenv('MYSQL_USER') ?: 'root';
-$DB_PASS = getenv('MYSQL_PASS') ?: '';
+$DB_NAME = getenv('MYSQL_DB')   ?: 'if0_40116604_ayam_rempah';
+$DB_USER = getenv('MYSQL_USER') ?: 'if0_40116604';
+$DB_PASS = getenv('MYSQL_PASS') ?: 'Memories05';
 
 try {
     $dsn = "mysql:host={$DB_HOST};port={$DB_PORT};dbname={$DB_NAME};charset=utf8mb4";
