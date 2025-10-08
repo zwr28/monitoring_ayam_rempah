@@ -1,20 +1,27 @@
--- create_tables.sql
-CREATE TABLE IF NOT EXISTS users (
-  id SERIAL PRIMARY KEY,
-  username VARCHAR(100) UNIQUE NOT NULL,
-  password_hash VARCHAR(255) NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
+-- create_tables.sql (MySQL)
+-- Jalankan di MySQL 5.7+ / 8.0
+CREATE DATABASE IF NOT EXISTS `ayam_monitoring`
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `ayam_monitoring`;
 
-CREATE TABLE IF NOT EXISTS orders (
-  id SERIAL PRIMARY KEY,
-  customer_name VARCHAR(200) DEFAULT 'Pembeli',
-  note TEXT,
-  delivery_time TIMESTAMP WITH TIME ZONE,
-  start_time TIMESTAMP WITH TIME ZONE,
-  duration_memasak INTEGER DEFAULT 15,
-  duration_packing INTEGER DEFAULT 5,
-  duration_mengantar INTEGER DEFAULT 20,
-  status_override VARCHAR(50),
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
-);
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) NOT NULL UNIQUE,
+  `password_hash` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `customer_name` VARCHAR(200) DEFAULT 'Pembeli',
+  `note` TEXT NULL,
+  `delivery_time` DATETIME NULL,
+  `start_time` DATETIME NULL,
+  `duration_memasak` INT DEFAULT 15,
+  `duration_packing` INT DEFAULT 5,
+  `duration_mengantar` INT DEFAULT 20,
+  `status_override` VARCHAR(50) NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
