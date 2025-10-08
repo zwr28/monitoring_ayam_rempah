@@ -1,0 +1,33 @@
+
+:root{
+  --mc-red: #DA291C;
+  --mc-yellow: #FFC72C;
+  --mc-dark: #111111;
+}
+body{
+  background: #fafafa;
+}
+.navbar-mc{
+  background: var(--mc-red);
+}
+.navbar-brand img{
+  height: 40px;
+  width: auto;
+}
+.btn-primary{
+  background: var(--mc-red);
+  border-color: var(--mc-red);
+}
+.btn-primary:hover{
+  background: #bb2217;
+  border-color: #bb2217;
+}
+.badge-memasak{ background: var(--mc-yellow); color: #000; }
+.badge-packing{ background: #17a2b8; }
+.badge-mengantarkan{ background: #0d6efd; }
+.badge-tersedia{ background: #198754; }
+.card-status{ min-height: 160px; border-radius: 16px; }
+.footer-mc{
+  font-size: .9rem;
+  color: #888;
+}
